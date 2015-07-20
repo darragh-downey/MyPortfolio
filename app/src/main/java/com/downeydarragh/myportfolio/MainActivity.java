@@ -15,6 +15,7 @@ import java.util.Map;
 
 
 public class MainActivity extends ActionBarActivity {
+    Toast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,41 +52,42 @@ public class MainActivity extends ActionBarActivity {
         int duration = Toast.LENGTH_LONG;
         String base_text = "This button will launch my %s app!";
         String text = "";
-        Toast toast = Toast.makeText(context, text, duration);
 
-        Formatter formatter;
+        if(toast != null){
+            toast.cancel();
+        }
+        
         switch (view.getId()){
             case R.id.capstone_app_name:
-                text = String.format(base_text, R.string.capstone);
+                text = String.format(base_text, getString(R.string.capstone));
                 toast = Toast.makeText(context, text, duration);
                 toast.show();
                 break;
             case R.id.xyz_reader:
-                text = String.format(base_text, R.string.xyz);
+                text = String.format(base_text, getString(R.string.xyz));
                 toast = Toast.makeText(context, text, duration);
                 toast.show();
                 break;
             case R.id.spotify_streamer:
-                text = String.format(base_text, R.string.spotify);
+                text = String.format(base_text, getString(R.string.spotify));
                 toast = Toast.makeText(context, text, duration);
                 toast.show();
                 break;
             case R.id.build_it_bigger:
-                text = String.format(base_text, R.string.buildit);
+                text = String.format(base_text, getString(R.string.buildit));
                 toast = Toast.makeText(context, text, duration);
                 toast.show();
                 break;
             case R.id.library_app:
-                text = String.format(base_text, R.string.library);
+                text = String.format(base_text, getString(R.string.library));
                 toast = Toast.makeText(context, text, duration);
                 toast.show();
                 break;
             case R.id.scores_app:
-                text = String.format(base_text, R.string.scores);
+                text = String.format(base_text, getString(R.string.scores));
                 toast = Toast.makeText(context, text, duration);
                 toast.show();
                 break;
         }
-
     }
 }
