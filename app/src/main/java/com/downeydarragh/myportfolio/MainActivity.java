@@ -37,9 +37,10 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        //Unnecessary - user doesn't require settings
+        //if (id == R.id.action_settings) {
+        //    return true;
+        //}
 
         return super.onOptionsItemSelected(item);
     }
@@ -47,7 +48,7 @@ public class MainActivity extends ActionBarActivity {
     public void sendMessage(View view) {
 
         Context context = getApplicationContext();
-        int duration = Toast.LENGTH_SHORT;
+        int duration = Toast.LENGTH_LONG;
         String base_text = "This button will launch my %s app!";
         String text = "";
         Toast toast = Toast.makeText(context, text, duration);
@@ -55,32 +56,32 @@ public class MainActivity extends ActionBarActivity {
         Formatter formatter;
         switch (view.getId()){
             case R.id.capstone_app_name:
-                text = String.format(base_text, "capstone");
+                text = String.format(base_text, R.string.capstone);
                 toast = Toast.makeText(context, text, duration);
                 toast.show();
                 break;
             case R.id.xyz_reader:
-                text = String.format(base_text, "xyz reader");
+                text = String.format(base_text, R.string.xyz);
                 toast = Toast.makeText(context, text, duration);
                 toast.show();
                 break;
             case R.id.spotify_streamer:
-                text = String.format(base_text, "spotify streamer");
+                text = String.format(base_text, R.string.spotify);
                 toast = Toast.makeText(context, text, duration);
                 toast.show();
                 break;
             case R.id.build_it_bigger:
-                text = String.format(base_text, "building it bigger");
+                text = String.format(base_text, R.string.buildit);
                 toast = Toast.makeText(context, text, duration);
                 toast.show();
                 break;
             case R.id.library_app:
-                text = String.format(base_text, "library");
+                text = String.format(base_text, R.string.library);
                 toast = Toast.makeText(context, text, duration);
                 toast.show();
                 break;
             case R.id.scores_app:
-                text = String.format(base_text, "scores");
+                text = String.format(base_text, R.string.scores);
                 toast = Toast.makeText(context, text, duration);
                 toast.show();
                 break;
